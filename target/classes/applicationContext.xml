@@ -9,11 +9,13 @@
     	http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id = "musicBean"
-          class="ru.springtest.FolkMusic">
+          class="ru.springtest.RockMusic">
     </bean>
     <bean id="musicPlayer"
           class="ru.springtest.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
+        <property name="name" value="Max"/>
+        <property name="volume" value="75"/>
     </bean>
 
 </beans>
