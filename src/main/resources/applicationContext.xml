@@ -12,9 +12,21 @@
     <bean id = "musicBean"
           class="ru.springtest.RockMusic">
     </bean>
+    <bean id = "musicBean1"
+          class="ru.springtest.FolkMusic">
+    </bean>
+    <bean id = "musicBean2"
+          class="ru.springtest.ClassicalMusic">
+    </bean>
     <bean id="musicPlayer"
           class="ru.springtest.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+        <property name="musicList">
+        <list>
+        <ref bean="musicBean" />
+        <ref bean="musicBean1" />
+        <ref bean="musicBean2" />
+        </list>
+        </property>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
