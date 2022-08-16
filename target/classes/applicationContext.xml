@@ -10,13 +10,16 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id = "musicBean"
-          class="ru.springtest.RockMusic">
+          class="ru.springtest.RockMusic"
+    factory-method="getRockMusic">
     </bean>
     <bean id = "musicBean1"
-          class="ru.springtest.FolkMusic">
+          class="ru.springtest.FolkMusic"
+    factory-method="getFolkMusic">
     </bean>
     <bean id = "musicBean2"
-          class="ru.springtest.ClassicalMusic">
+          class="ru.springtest.ClassicalMusic"
+    factory-method="getClassicalMusic">
     </bean>
     <bean id="musicPlayer"
           class="ru.springtest.MusicPlayer">
