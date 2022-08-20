@@ -1,16 +1,9 @@
 package ru.springtest;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RockMusic implements Music{
-
-    private RockMusic(){
-
-    }
-
-    protected static RockMusic getRockMusic(){
-        return new RockMusic();
-    }
-
-
 
     @Override
     public String getSong() {
