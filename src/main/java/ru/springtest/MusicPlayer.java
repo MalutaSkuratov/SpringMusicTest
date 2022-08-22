@@ -20,10 +20,8 @@ public class MusicPlayer {
         this.folkMusic = folkMusic;
     }
 
-    public void playMusic() {
-        System.out.println("Playing: " + classicalMusic.getSong());
-        System.out.println("Playing: " + rockMusic.getSong());
-        System.out.println("Playing: " + folkMusic.getSong());
+    public String playMusic() {
+        return "Playing: " + classicalMusic.getSong() + ". After playing: " + rockMusic.getSong();
 
 
     }

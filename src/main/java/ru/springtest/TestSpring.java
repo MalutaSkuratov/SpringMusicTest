@@ -7,10 +7,12 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        Winamp winamp = context.getBean("winamp", Winamp.class);
+        System.out.println(winamp);
 
 
         context.close();
     }
 }
+
+// Цепочка зависимостей Winamp -> MusicPlayer -> ClassicalMusic и RockMusic
