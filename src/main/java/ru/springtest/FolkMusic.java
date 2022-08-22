@@ -2,7 +2,7 @@ package ru.springtest;
 
 import org.springframework.stereotype.Component;
 
-@Component ("folkMusic")
+@Component
 public class FolkMusic implements Music{
 
 

@@ -9,19 +9,21 @@ import java.util.List;
 
 @Component
 public class MusicPlayer {
+    private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
-
-    public MusicPlayer(){
-    }
+    private FolkMusic folkMusic;
 
     @Autowired
-    public MusicPlayer(RockMusic rockMusic) {
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, FolkMusic folkMusic) {
+        this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
+        this.folkMusic = folkMusic;
     }
 
-
     public void playMusic() {
+        System.out.println("Playing: " + classicalMusic.getSong());
         System.out.println("Playing: " + rockMusic.getSong());
+        System.out.println("Playing: " + folkMusic.getSong());
 
 
     }
