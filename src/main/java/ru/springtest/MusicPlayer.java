@@ -1,35 +1,24 @@
 package ru.springtest;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Component
 public class MusicPlayer {
-    private RockMusic rockMusic;
-    private ClassicalMusic classicalMusic;
 
-    @Autowired
-    public MusicPlayer(RockMusic rockMusic, ClassicalMusic classicalMusic) {
-        this.rockMusic = rockMusic;
-        this.classicalMusic = classicalMusic;
+   private List<Music>musicList;
+
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    public void playMusic(MusicStyle musicStyle){
+    public String playMusic(MusicPlayer musicStyle){
         Random random = new Random();
 
-        int randomNum = random.nextInt(3);
-
-        if(musicStyle == MusicStyle.CLASSIC){
-            System.out.println(classicalMusic.getSong().get(randomNum));
-        }else {
-            System.out.println(rockMusic.getSong().get(randomNum));
-        }
+        return "Playing: " + musicList.get(random.nextInt(musicList.size())).getSong();
     }
 
 

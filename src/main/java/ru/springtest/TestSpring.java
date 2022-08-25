@@ -9,12 +9,10 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        MusicStyle musicStyle = MusicStyle.ROCK;
+
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic(MusicStyle.ROCK);
-        musicPlayer.playMusic(MusicStyle.CLASSIC);
-
+        System.out.println(musicPlayer.playMusic(musicPlayer));
 
         context.close();
     }
